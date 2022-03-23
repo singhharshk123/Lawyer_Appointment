@@ -1,7 +1,7 @@
 import { faBars, faTimeline } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-// import Button from "./Button";
+import { Link } from "react-router-dom";
 import menuItems from "./MenuItems";
 import "./Navbar.css";
 
@@ -14,9 +14,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-logo">
-        React <i className="fab fa-react"></i>
-      </h1>
+      <div className="navbar-logo">
+          <img src={require('../../assets/icons8-lawyer-60.png')} alt="" className="nav_logo mx-2" />
+            <span className="log_header">
+            LAWER APPOINT 
+            </span>
+        
+      </div>
       <div className="menu-icon" onClick={handleClick}>
         {
             active ? <FontAwesomeIcon className="fas fa-times" icon={faTimeline} />
@@ -28,14 +32,13 @@ const Navbar = () => {
         {menuItems.map((item, index) => {
           return (
             <li key={index}>
-              <a href={item.url} className={item.cName}>
+                 <Link to={item.url} className={item.cName} >
                 {item.title}
-              </a>
+              </Link>
             </li>
           );
         })}
       </ul>
-      <button>SIGN UP</button>
     </nav>
   );
 };

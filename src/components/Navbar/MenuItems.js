@@ -1,29 +1,29 @@
 const menuItems = [
     {
-      title: "Home",
-      url: "#",
+      title: "HOME",
+      url: "/",
       cName: "nav-links"
     },
     {
-      title: "/about",
-      url: "/about",
+      title: "LAWYERS",
+      url: "/lawyers",
       cName: "nav-links"
     },
     {
-      title: "Products",
-      url: "#",
+      title: "APPOINTMENT",
+      url: "appointment",
       cName: "nav-links"
     },
     {
-      title: "Contact",
-      url: "#",
-      cName: "nav-links"
-    },
-    {
-      title: "Sign up",
-      url: "#",
-      cName: "nav-links-mobile"
-    }
+        title: "BOOK APPOINTMENT",
+        url: "book_appointment",
+        cName: "nav-links"
+      },
+      {
+        title: "ABOUT US",
+        url: "about_us",
+        cName: "nav-links"
+      },
   ];
   
   export default menuItems;
