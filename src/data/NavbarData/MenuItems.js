@@ -10,8 +10,8 @@ const menuItems = [
       cName: "nav-links"
     },
     {
-      title: "APPOINTMENT",
-      url: "appointment",
+      title: "APPOINTMENTS",
+      url: "appointments",
       cName: "nav-links"
     },
     {

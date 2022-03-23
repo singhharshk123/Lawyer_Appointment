@@ -2,8 +2,8 @@ import { faBars, faMultiply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import menuItems from "./MenuItems";
-import "./Navbar.css";
+import menuItems from "../../data/NavbarData/MenuItems";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -13,7 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <div className="navbar_container">
+      <nav className="navbar">
       <div className="navbar-logo">
           <img src={require('../../assets/icons8-lawyer-60.png')} alt="" className="nav_logo mx-2" />
             <span className="log_header">
@@ -40,6 +41,7 @@ const Navbar = () => {
         })}
       </ul>
     </nav>
+    </div>
   );
 };
 
