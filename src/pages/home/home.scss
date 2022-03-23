@@ -26,6 +26,21 @@
     }
 }
 
+.carousel-image {
+    width: 180px;
+    height: 180px;
+    object-fit: fill;
+    border: 2px solid #dadada;
+    background-color: white;
+    margin: 0px 2% 0px 2%;
+    cursor: pointer;
+    @media only screen and (max-device-width: 576px) {
+      width: 80px;
+      height: 80px;
+      margin: 0px 10px 0px 10px;
+    }
+  }
+
 
 @media (max-width: 570px) {
     .home {
