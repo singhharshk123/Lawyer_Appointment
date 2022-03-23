@@ -18,8 +18,6 @@ const Navbar = () => {
         React <i className="fab fa-react"></i>
       </h1>
       <div className="menu-icon" onClick={handleClick}>
-        {/* <FontAwesomeIcon className={ active ? "fas fa-times" : "fas fa-bars"} icon={ active ? faTimeline : faBars} /> */}
-
         {
             active ? <FontAwesomeIcon className="fas fa-times" icon={faTimeline} />
             : <FontAwesomeIcon className="fas fa-bars" icon={faBars} />
