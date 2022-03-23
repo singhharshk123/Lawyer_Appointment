@@ -1,4 +1,4 @@
-import { faBars, faTimeline } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMultiply } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
       <div className="menu-icon" onClick={handleClick}>
         {
-            active ? <FontAwesomeIcon className="fas fa-times" icon={faTimeline} />
+            active ? <FontAwesomeIcon className="fas fa-times" icon={faMultiply} />
             : <FontAwesomeIcon className="fas fa-bars" icon={faBars} />
         }
 

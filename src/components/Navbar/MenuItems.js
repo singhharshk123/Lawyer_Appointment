@@ -21,7 +21,7 @@ const menuItems = [
       },
       {
         title: "ABOUT US",
-        url: "about_us",
+        url: "/about_us",
         cName: "nav-links"
       },
   ];
