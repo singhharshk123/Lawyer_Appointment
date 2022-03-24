@@ -18,7 +18,7 @@ function Appointment() {
 
   const renderAccordianData = () => {
     return (
-      <div>
+      <div> 
         { events.length > 0 ? events && events.map((item, index) => {
           return (
             <Accordion defaultActiveKey={events[0].id } key={index} className="mb-5">
@@ -66,7 +66,9 @@ function Appointment() {
             </Accordion>
           );
         }) 
-      :<h1>Kindly book an appoinment to see the appoinment details</h1>}
+      :<div className="m-5 p-5 no_data">
+        <h1>Kindly book an appoinment to see the appoinment details</h1>
+        </div>}
       </div>
     );
   };

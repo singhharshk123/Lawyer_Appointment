@@ -6,6 +6,7 @@ import About from './pages/aboutUs/about';
 import Lawyer from './pages/lawyers/lawyer';
 import BookAppointment from './pages/bookAppointment/bookAppointmnet';
 import Appointment from './pages/appoinments/appoinment';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/book_appointment" element={<BookAppointment />} />
           <Route path="/appointments" element={<Appointment />} />
         </Routes>
+        <Footer />
     </div>
   );
 }

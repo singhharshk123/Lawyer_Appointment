@@ -95,6 +95,8 @@ function BookAppointment() {
                 <input
                   type="text"
                   name="name"
+                  className="form-control"
+                  placeholder="Name"
                   onChange={(e) => handleOnChange(e)}
                   value={inputData}
                   required
