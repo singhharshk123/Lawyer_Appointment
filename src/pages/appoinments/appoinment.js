@@ -6,10 +6,8 @@ import StarRating from "../../components/StarRating/starRating";
 import './appoinment.scss';
 import Moment from 'react-moment';
 import { delete_appointment } from "../../redux/action/appointment/index";
-// import { useLocation } from "react-router-dom";
 
 function Appointment() {
-
   
   const dispatch = useDispatch();
   const events = useSelector((state) => state.appointment.appointments);
@@ -21,7 +19,7 @@ function Appointment() {
   const renderAccordianData = () => {
     return (
       <div>
-        {events && events.map((item, index) => {
+        { events.length > 0 ? events && events.map((item, index) => {
           return (
             <Accordion defaultActiveKey={events[0].id } key={index} className="mb-5">
               <Accordion.Item eventKey={item.id}>
@@ -67,7 +65,8 @@ function Appointment() {
               </Accordion.Item>
             </Accordion>
           );
-        })}
+        }) 
+      :<h1>Kindly book an appoinment to see the appoinment details</h1>}
       </div>
     );
   };
@@ -75,7 +74,7 @@ function Appointment() {
   return (
     <div className="appointment_content mx-4 ">
       <div className="container">
-        <h1 className="text-center mt-3"> LIST OF LAWYERS </h1>
+        <h1 className="text-center mt-3"> LIST OF APPOINTMENTS </h1>
 
         <div className="mt-5 mb-5 ">{renderAccordianData()}</div>
       </div>

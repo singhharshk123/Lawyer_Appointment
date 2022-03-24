@@ -23,9 +23,9 @@ function BookAppointment() {
 
   const handleToConfirm = (item) => {
     if (inputData && appointmentDate) {
-      item.userName=inputData;
+      item.userName = inputData;
       item.date = appointmentDate;
-      
+
       dispatch(add_appointment(item));
       navigate("/appointments");
     }
@@ -47,7 +47,7 @@ function BookAppointment() {
                 className="appoinment_lawyer_image"
               />
             </div>
-            <div className="col mt-3">
+            <div className="col">
               <div>
                 <p className="lawyer_info">
                   Name : <span className="mx-3"> {lawyerData.name} </span>{" "}
@@ -75,7 +75,10 @@ function BookAppointment() {
               </div>
 
               <div className="mt-3 mb-3">
-                <label htmlFor="appointmentDate" className="input_label" >Name</label> <br />
+                <label htmlFor="appointmentDate" className="client_info">
+                  Name
+                </label>{" "}
+                <br />
                 <input
                   type="text"
                   name="name"
@@ -84,15 +87,23 @@ function BookAppointment() {
                   required
                 />
               </div>
-              <div className="mt-3 mb-3" >
-                <label htmlFor="input_label">Appointment Date</label>
+              <div className="mt-3 mb-3">
+                <label htmlFor="input_label" className="client_info">
+                  Appointment Date
+                </label>
                 <input
                   type="datetime-local"
                   className="form-control"
                   name="appointmentDate"
                   value={appointmentDate}
+                  min="2014-05-11" max="2014-05-20"
                   onChange={onChangAppointmentDate}
                 />
+                {!inputData || !appointmentDate ? (
+                  <small className="col error_msg mb-5">
+                    Kindly fill the Name and Date Time field to proceed
+                  </small>
+                ) : null}
               </div>
 
               <div className="row mt-5 ">
@@ -111,7 +122,7 @@ function BookAppointment() {
   };
 
   return (
-    <div className="book_appointment_content mx-4 ">
+    <div className="book_appointment_content mx-4 mb-5 ">
       <div className="container py-5">
         <div className="header">
           <FontAwesomeIcon
@@ -131,9 +142,6 @@ function BookAppointment() {
           </h1>
         )}
       </div>
-      <small className="error">
-        Kindly Fill the Name and Date Time Field to proceed
-      </small>
     </div>
   );
 }
