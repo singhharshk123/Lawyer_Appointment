@@ -6,6 +6,9 @@ import "./bookAppointmnet.scss";
 import { useDispatch } from "react-redux";
 import { add_appointment } from "../../redux/action/appointment/index";
 import { useState } from "react";
+import 'react-datetime/css/react-datetime.css';
+import Datetime from 'react-datetime';
+import moment from 'moment';
 
 function BookAppointment() {
   const navigate = useNavigate();
@@ -16,8 +19,8 @@ function BookAppointment() {
   const [inputData, setInputData] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
 
-  const onChangAppointmentDate = (e) => {
-    const appointmentDate = e.target.value;
+  const onChangAppointmentDate = (value) => {
+    const appointmentDate = value;
     setAppointmentDate(appointmentDate);
   };
 
@@ -33,6 +36,16 @@ function BookAppointment() {
 
   const handleOnChange = (e) => {
     setInputData(e.target.value);
+  };
+
+  let dateStartProps = {
+    placeholder: 'Date',
+    disabled: false,
+  };
+  const yesterday = moment().subtract(1, 'day');
+
+  const disablePastDt = (current) => {
+    return current.isAfter(yesterday);
   };
 
   const renderLawyerDetails = () => {
@@ -91,14 +104,12 @@ function BookAppointment() {
                 <label htmlFor="input_label" className="client_info">
                   Appointment Date
                 </label>
-                <input
-                  type="datetime-local"
-                  className="form-control"
-                  name="appointmentDate"
-                  value={appointmentDate}
-                  min="2014-05-11" max="2014-05-20"
-                  onChange={onChangAppointmentDate}
-                />
+                <Datetime
+                timeFormat={true}
+                inputProps={dateStartProps}
+                isValidDate={disablePastDt}
+                onChange={(value) => onChangAppointmentDate(value)}
+              />
                 {!inputData || !appointmentDate ? (
                   <small className="col error_msg mb-5">
                     Kindly fill the Name and Date Time field to proceed
