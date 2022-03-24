@@ -78,7 +78,7 @@ function Appointment() {
           );
         }) 
       :<div className="m-5 p-5 no_data">
-        <h1>Kindly book an appoinment to see the appoinment details</h1>
+        <h1>Kindly book an appointment to see the appointment details</h1>
         </div>}
       </div>
     );

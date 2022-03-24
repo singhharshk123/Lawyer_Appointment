@@ -6,9 +6,9 @@ import "./bookAppointmnet.scss";
 import { useDispatch } from "react-redux";
 import { add_appointment } from "../../redux/action/appointment/index";
 import { useState } from "react";
-import 'react-datetime/css/react-datetime.css';
-import Datetime from 'react-datetime';
-import moment from 'moment';
+import "react-datetime/css/react-datetime.css";
+import Datetime from "react-datetime";
+import moment from "moment";
 
 function BookAppointment() {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function BookAppointment() {
       item.date = appointmentDate;
 
       dispatch(add_appointment(item));
-      navigate("/appointments",{state:{addToast:true}});
+      navigate("/appointments", { state: { addToast: true } });
     }
   };
 
@@ -39,10 +39,10 @@ function BookAppointment() {
   };
 
   let dateStartProps = {
-    placeholder: 'Date',
+    placeholder: "Date",
     disabled: false,
   };
-  const yesterday = moment().subtract(1, 'day');
+  const yesterday = moment().subtract(1, "day");
 
   const disablePastDt = (current) => {
     return current.isAfter(yesterday);
@@ -107,11 +107,11 @@ function BookAppointment() {
                   Appointment Date
                 </label>
                 <Datetime
-                timeFormat={true}
-                inputProps={dateStartProps}
-                isValidDate={disablePastDt}
-                onChange={(value) => onChangAppointmentDate(value)}
-              />
+                  timeFormat={true}
+                  inputProps={dateStartProps}
+                  isValidDate={disablePastDt}
+                  onChange={(value) => onChangAppointmentDate(value)}
+                />
                 {!inputData || !appointmentDate ? (
                   <small className="col error_msg mb-5">
                     Kindly fill the Name and Date Time field to proceed
@@ -149,10 +149,12 @@ function BookAppointment() {
         {lawyerData.id ? (
           <div>{renderLawyerDetails()}</div>
         ) : (
-          <h1>
-            Kindly go back to Lawyer page and select a lawyer to make an
-            appointment
-          </h1>
+          <div className="no_data" >
+            <h1>
+              Kindly go back to Lawyer page and select a lawyer to make an
+              appointment
+            </h1>
+          </div>
         )}
       </div>
     </div>
