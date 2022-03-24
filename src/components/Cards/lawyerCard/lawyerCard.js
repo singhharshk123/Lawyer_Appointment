@@ -1,15 +1,18 @@
 import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import StarRating from '../../StarRating/starRating';
 import './lawyerCard.scss';
 
 const LawyerCard = ( props ) => {
+
+  let navigate = useNavigate();
 
     const {
         cardInformation = [],
     } = props || {};
 
     const handleBookAppointment = ( item ) => {
-      console.log('item', item);
+      navigate("/book_appointment", { state: { lawyerData: item } });
     };
 
 return (
@@ -17,7 +20,7 @@ return (
        {
             cardInformation.map((item, index) =>{
                 return (
-                  <div className='col-md-3 mb-5'>
+                  <div className='col-md-3 col-sm-4 col-xs-4 mb-5'>
                       <Card className='cards_info mb-2' key={index} >
                       <Card.Img variant="top lawyer_img" src={item.image} />
                     <Card.Body>

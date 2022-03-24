@@ -1,0 +1,61 @@
+.book_appointment_content {
+
+    .header {
+        margin-top: -10px;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .back {
+            color: #0C3C4D;
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+            margin-left: -12px;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 10px;
+            color: #0C3C4D;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+    }
+
+
+    .appoinment_lawyer_card {
+        width: 70vw;
+        box-shadow: 3px 4px 7px -3px rgba(0,0,0,0.69);
+
+        .appoinment_lawyer_image {
+            height: 350px;
+            width: 300px;
+        }
+
+        .book_button {
+            background: #319c6a;
+            color: #FFF;
+            border-color: #fff;
+            padding: 5px 10px;
+        }
+    }
+
+    .confirm_button {
+        background: #fff;
+        color: #2196f3;
+        border: 1px solid #2196f3;
+        padding: 15px 20px;
+    }
+    
+}
+
+@media (max-width: 800px) {
+    .book_appointment_content {
+      .appoinment_lawyer_card {
+          .appoinment_lawyer_image {
+            height: 250px;
+            width: 200px;
+          }
+      }
+    }
+  }

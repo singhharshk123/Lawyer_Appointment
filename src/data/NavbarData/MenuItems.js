@@ -1,7 +1,7 @@
 const menuItems = [
     {
       title: "HOME",
-      url: "/",
+      url: "/home",
       cName: "nav-links"
     },
     {
@@ -11,14 +11,14 @@ const menuItems = [
     },
     {
       title: "APPOINTMENTS",
-      url: "appointments",
+      url: "/appointments",
       cName: "nav-links"
     },
-      {
-        title: "ABOUT US",
-        url: "/about_us",
-        cName: "nav-links"
-      },
+    {
+      title: "ABOUT US",
+      url: "/about_us",
+      cName: "nav-links"
+    },
   ];
   
   export default menuItems;
