@@ -1,16 +1,8 @@
-// import {ADD_APPOINTMENT, SEARCH_APPOINTMENT} from '';
+import { ADD_APPOINTMENT, DELETE_APPOINTMENT } from "../../constants";
 
-import { ADD_APPOINTMENT, SEARCH_APPOINTMENT } from "../../constants";
-
-// Initial State
 const initialState = {
-    appointments: localStorage.getItem('appointments') ? JSON.parse(localStorage.getItem('appointments')) : [],
-    selectedAppointment: {},
+    appointments:[],
 }
-
-// Reducer function
-// Takes state, action as arguments 
-// Returns new state by switching through action.type
 const appointmentReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_APPOINTMENT:
@@ -18,10 +10,11 @@ const appointmentReducer = (state = initialState, action) => {
                 ...state,
                 appointments: [...state.appointments, action.payload],
             };
-        case SEARCH_APPOINTMENT:
+        case DELETE_APPOINTMENT:
             return {
-                ...state,
-                selectedAppointment: state.appointments.find(item => item.id === action.payload),
+                appointments : [
+                    ...state.appointments.filter( appointment => appointment !== action.payload )
+                ]
             }
         default: 
             return state;

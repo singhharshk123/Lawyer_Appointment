@@ -1,32 +1,48 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Accordion } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import StarRating from "../../components/StarRating/starRating";
 import './appoinment.scss';
+import Moment from 'react-moment';
+import { delete_appointment } from "../../redux/action/appointment/index";
 // import { useLocation } from "react-router-dom";
 
 function Appointment() {
-  const events = useSelector((state) => state.appointment.appointments);
 
-  console.log("appointmentList", events);
+  
+  const dispatch = useDispatch();
+  const events = useSelector((state) => state.appointment.appointments);
+  
+  const handleToDeleteAppointment = ( item ) => {
+    dispatch(delete_appointment(item));
+  };
 
   const renderAccordianData = () => {
     return (
       <div>
-        {events.map((item, index) => {
+        {events && events.map((item, index) => {
           return (
-            <Accordion defaultActiveKey={index + 1} className="mb-5">
+            <Accordion defaultActiveKey={events[0].id } key={index} className="mb-5">
               <Accordion.Item eventKey={item.id}>
                 <Accordion.Header>
                   Lawyer Name : {item.name}
                   <div className="row trash_icon">
                    <div className="col text-end">
-                     <FontAwesomeIcon icon={faTrashAlt}  />
+                     <FontAwesomeIcon icon={faTrashAlt} onClick={() => handleToDeleteAppointment(item)}  />
                    </div>
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
+                <p className="lawyer_info">
+                    Client Name : <span className="mx-3"> {item.userName} </span>{" "}
+                  </p>
+                  <p className="lawyer_info">
+                    Appointment Date : <span className="mx-3"> 
+                    <Moment date={item.date} format={"dddd, MMMM Do YYYY, h:mm:ss a"} />
+                     
+                    </span>
+                  </p>
                   <p className="lawyer_info">
                     Specialties :{" "}
                     <span className="mx-3"> {item.specialties} </span>{" "}
@@ -67,4 +83,13 @@ function Appointment() {
   );
 }
 
-export default Appointment;
+const mapDispatchToProps = dispatch => {
+  return {
+    delete_appointment: item => dispatch(delete_appointment(item))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+) ( Appointment);
