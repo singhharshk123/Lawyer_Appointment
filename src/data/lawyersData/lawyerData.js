@@ -53,7 +53,7 @@ export const homeLawyersData = [
 
 export const familyLawyerData = [
     {
-      id: 1,
+      id: 10,
       name: 'Olive Yew',
       image:'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
       specialties:'Family Lawyer',
@@ -62,7 +62,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 2,
+      id: 11,
       name: 'Aida Bugg',
       image:'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
       specialties:'Family Lawyer',
@@ -71,7 +71,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 3,
+      id: 12,
       name: 'Maureen Gayle',
       image:'https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE',
       specialties:'Family Lawyer',
@@ -80,7 +80,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 4,
+      id: 13,
       name: 'Teri Dactyl',
       image:'https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk',
       specialties:'Family Lawyer',
@@ -92,7 +92,7 @@ export const familyLawyerData = [
 
   export const divorceLawyerData = [
     {
-      id: 1,
+      id: 14,
       name: 'Sam Colson',
       image:'https://i.picsum.photos/id/1035/5854/3903.jpg?hmac=DV0AS2MyjW6ddofvSIU9TVjj1kewfh7J3WEOvflY8TM',
       specialties:'Divorce Lawyer',
@@ -101,7 +101,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 2,
+      id: 15,
       name: 'Chris Evans',
       image:'https://i.picsum.photos/id/177/2515/1830.jpg?hmac=G8-2Q3-YPB2TreOK-4ofcmS-z5F6chIA0GHYAe5yzDY',
       specialties:'Divorce Lawyer',
@@ -110,7 +110,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 3,
+      id: 16,
       name: 'Rajest KS',
       image:'https://i.picsum.photos/id/203/4032/3024.jpg?hmac=yeLnHOEAWUYBtMnanR0-0Q7gSvYbyxPG3PLJYvm170Q',
       specialties:'Divorce Lawyer',
@@ -119,7 +119,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 4,
+      id: 17,
       name: 'Kishan Dutt',
       image:'https://i.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0',
       specialties:'Divorce Lawyer',
@@ -131,7 +131,7 @@ export const familyLawyerData = [
 
   export const taxLawyerData = [
     {
-      id: 1,
+      id: 18,
       name: 'J L Nagar',
       image:'https://i.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g',
       specialties:'Tax Lawyer',
@@ -140,7 +140,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 2,
+      id: 19,
       name: 'Farahat Warsi',
       image:'https://i.picsum.photos/id/1027/2848/4272.jpg?hmac=EAR-f6uEqI1iZJjB6-NzoZTnmaX0oI0th3z8Y78UpKM',
       specialties:'Tax Lawyer',
@@ -149,7 +149,7 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 3,
+      id: 20,
       name: 'Anik Mehta',
       image:'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
       specialties:'Tax Lawyer',
@@ -158,11 +158,10 @@ export const familyLawyerData = [
       booking:true,
     },
     {
-      id: 4,
+      id: 21,
       name: 'John Carter',
       image:'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
       specialties:'Tax Lawyer',
-      
       fees:35,
       rating:4,
       booking:true,
