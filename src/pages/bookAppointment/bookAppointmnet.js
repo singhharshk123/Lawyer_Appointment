@@ -4,14 +4,18 @@ import { useLocation, useNavigate } from "react-router-dom";
 import StarRating from "../../components/StarRating/starRating";
 import './bookAppointmnet.scss';
 
-function BookAppointment () {
+import { useDispatch } from 'react-redux';
+import { add_appointment } from "../../redux/action/appointment/index";
 
+function BookAppointment () {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const { state } = useLocation();
     const { lawyerData = { } } = state || { } ;
 
     const handleToConfirm = ( item ) => {
-      navigate("/appointments", { state: { appointmentData: item } });
+      dispatch(add_appointment(item))
+      navigate("/appointments");
     };
 
     const renderBookButtons = ( ) => {
