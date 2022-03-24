@@ -10,6 +10,10 @@ function BookAppointment () {
     const { state } = useLocation();
     const { lawyerData = { } } = state || { } ;
 
+    const handleToConfirm = ( item ) => {
+      navigate("/appointments", { state: { appointmentData: item } });
+    };
+
     const renderBookButtons = ( ) => {
         return (
             <div className="col-md-6 mt-5">
@@ -34,11 +38,11 @@ function BookAppointment () {
                   </div>
                   <div className="col mt-3" >
                      <div>
-                     <p>Name {' '}:- <span className="mx-3" > {lawyerData.name} </span> </p>
-                      <p>Specialties {' '}:- <span className="mx-3" > {lawyerData.specialties} </span> </p>
-                      <p>Fees {' '}:- <span className="mx-3" > ${lawyerData.fees} </span> </p>
+                     <p className="lawyer_info" >Name {' '}: <span className="mx-3" > {lawyerData.name} </span> </p>
+                      <p className="lawyer_info" >Specialties {' '}: <span className="mx-3" > {lawyerData.specialties} </span> </p>
+                      <p className="lawyer_info" >Fees {' '}: <span className="mx-3" > ${lawyerData.fees} </span> </p>
                       
-                      <p>Ratings {' '}:- <span className="mx-3" > 
+                      <p className="lawyer_info" >Ratings {' '}: <span className="mx-3" > 
                       <StarRating 
                             rating={lawyerData.rating}
                             numberOfStars={5}
@@ -53,7 +57,7 @@ function BookAppointment () {
                      </div>
 
                      <div className="row mt-5 ">
-                        <button className='confirm_button col-md-6'  >
+                        <button className='confirm_button col-md-6' onClick={() => handleToConfirm(lawyerData)}  >
                             Confirm Appointment
                         </button>
                     </div>

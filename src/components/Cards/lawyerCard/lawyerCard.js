@@ -5,7 +5,7 @@ import './lawyerCard.scss';
 
 const LawyerCard = ( props ) => {
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
     const {
         cardInformation = [],
