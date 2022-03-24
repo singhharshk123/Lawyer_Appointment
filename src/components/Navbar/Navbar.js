@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="navbar-logo">
           <img src={require('../../assets/icons8-lawyer-60.png')} alt="" className="nav_logo mx-2" />
             <span className="log_header">
-            LAWEYR APPOINT 
+            LAWYER APPOINT 
             </span>
         
       </div>
