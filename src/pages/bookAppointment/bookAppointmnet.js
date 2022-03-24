@@ -30,7 +30,7 @@ function BookAppointment() {
       item.date = appointmentDate;
 
       dispatch(add_appointment(item));
-      navigate("/appointments");
+      navigate("/appointments",{state:{addToast:true}});
     }
   };
 

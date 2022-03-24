@@ -5,14 +5,25 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import StarRating from "../../components/StarRating/starRating";
 import './appoinment.scss';
 import Moment from 'react-moment';
+import {useLocation} from 'react-router-dom';
 import { delete_appointment } from "../../redux/action/appointment/index";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
+
 
 function Appointment() {
+
+  const [ showDeleteToast, setShowDeleteToast ] = useState(false);
   
   const dispatch = useDispatch();
+  const { state } = useLocation();
+  const { addToast = '' } = state || {};
+  
   const events = useSelector((state) => state.appointment.appointments);
   
   const handleToDeleteAppointment = ( item ) => {
+    setShowDeleteToast(true);
     dispatch(delete_appointment(item));
   };
 
@@ -73,8 +84,23 @@ function Appointment() {
     );
   };
 
+  useEffect( () => {
+    if ( showDeleteToast ) {
+      const deletedMssg = 'Appointment Deleted Successfully';
+      toast.error(deletedMssg);
+    }
+  }, [showDeleteToast]);
+
+  useEffect( () => {
+    if ( addToast) {
+      const addMssg = 'Appointment Added Successfully';
+      toast.success(addMssg);
+    }
+  }, [addToast]);
+
   return (
     <div className="appointment_content mx-4 ">
+      <ToastContainer />
       <div className="container">
         <h1 className="text-center mt-3"> LIST OF APPOINTMENTS </h1>
 
