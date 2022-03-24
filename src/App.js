@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home/home';
 import About from './pages/aboutUs/about';
+import Lawyer from './pages/lawyers/lawyer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Home/>} />
           <Route path="/about_us" element={<About/>} />
+          <Route path="/lawyers" element={<Lawyer/>} />
         </Routes>
     </div>
   );

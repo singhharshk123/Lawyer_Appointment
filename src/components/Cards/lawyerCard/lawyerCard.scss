@@ -1,9 +1,25 @@
 .lawyer_card {
 
+    .cards_info {
+        box-shadow: 3px 4px 7px -3px rgba(0,0,0,0.69);
+    }
+
     .features {
         color: #615f7e;
         font-weight: 600;
         font-size: 18px;
     }
 
+    .lawyer_img {
+        height: 200px;
+        width: 100%;
+    }
+
+
+    .book_button {
+        background: #319c6a;
+        color: #FFF;
+        border-color: #fff;
+        padding: 5px 10px;
+    }
 }

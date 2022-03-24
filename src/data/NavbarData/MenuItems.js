@@ -14,11 +14,6 @@ const menuItems = [
       url: "appointments",
       cName: "nav-links"
     },
-    {
-        title: "BOOK APPOINTMENT",
-        url: "book_appointment",
-        cName: "nav-links"
-      },
       {
         title: "ABOUT US",
         url: "/about_us",

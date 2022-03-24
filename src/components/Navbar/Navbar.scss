@@ -145,3 +145,16 @@
   }
 }
 }
+
+
+@media (max-width: 600px) {
+  .nav-menu {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-menu {
+    width: 80% !important;
+  }
+}
